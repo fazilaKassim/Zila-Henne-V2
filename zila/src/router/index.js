@@ -1,45 +1,49 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Accueil.vue";
+import Boutique from "../views/Boutique.vue";
+import Galerie from "../views/Galerie.vue";
+import Tarifs from "../views/Tarifs.vue";
+import RendezVous from "../views/RendezVous.vue";
+
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-  name: "Accueil",
-    component: Home
+    name: "Accueil",
+    component: Home,
   },
+
+  {
+    path: "/boutique",
+    name: "Boutique",
+    component: Boutique,
+  },
+
   {
     path: "/galerie",
     name: "Galerie",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function() {
-      return import(/* webpackChunkName: "about" */ "../views/Galerie.vue");
-    }
+    component: Galerie,
   },
-  {
-    path: "/boutique",
-  name: "Boutique",
-    component: Home
-  },
+
   {
     path: "/tarifs",
-  name: "Tarifs",
-    component: Home
+    name: "Tarifs",
+    component: Tarifs,
   },
+
   {
-    path: "/contact",
-  name: "Contact",
-    component: Home
-  }
+    path: "/rendezVous",
+    name: "RendezVous",
+    component: RendezVous,
+  },
 
 ];
 
 const router = new VueRouter({
-  routes
+  mode: "history",
+  routes,
 });
-
 export default router;
