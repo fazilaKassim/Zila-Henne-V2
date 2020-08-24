@@ -176,4 +176,11 @@ width: 100%;
       align-items: center;
     }
  
+ @media screen and( max-width: 679px ){
+   .form{
+     width: 100%;
+     margin: 0;
+     min-width: 380px;
+   }
+ }
 </style>

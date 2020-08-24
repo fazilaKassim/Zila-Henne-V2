@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Accueil.vue";
+import Accueil from "../views/Accueil.vue";
 import Boutique from "../views/Boutique.vue";
 import Galerie from "../views/Galerie.vue";
 import Tarifs from "../views/Tarifs.vue";
@@ -13,7 +13,7 @@ const routes = [
   {
     path: "/",
     name: "Accueil",
-    component: Home,
+    component: Accueil,
   },
 
   {
