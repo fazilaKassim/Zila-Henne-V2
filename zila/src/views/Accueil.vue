@@ -1,7 +1,30 @@
 <template>
   <section id="accueil">
     <div id="slide">
-      <article class="slide"></article>
+  <v-carousel
+    cycle
+    height="400"
+    hide-delimiter-background
+    show-arrows-on-hover
+  >
+    <v-carousel-item
+      v-for="(slide, i) in slides"
+      :key="i"
+    >
+      <v-sheet
+        :color="colors[i]"
+        height="100%"
+      >
+        <v-row
+          class="fill-height"
+          align="center"
+          justify="center"
+        >
+          <div class="display-3">{{ slide }} Slide</div>
+        </v-row>
+      </v-sheet>
+    </v-carousel-item>
+  </v-carousel>
     </div>
     <div id="accueil-baground">
     <div id="content-accueil">
@@ -23,7 +46,7 @@
       </section>
 
   <section id="boutique">
-            <h2>Zila Boutique</h2>
+            <h2>Menu Boutique</h2>
             <ul class="menu">
                 <li class="menu"> <a href="">
                         <figure>
@@ -39,13 +62,13 @@
                         </figure>
                     </a>
                 </li>
-                <!-- <li class="menu"><a href="">
+               <li class="menu"><a href="">
                         <figure>
-                            <img src="../assets/img/bougie.png" alt="" class="menu">
+                            <img src="../assets/img/cadre.jpg" alt="" class="menu">
                             <figcaption>Bougie</figcaption>
                         </figure>
                     </a>
-                </li> -->
+                </li>
                 <li class="menu"><a href="">
                         <figure>
                             <img src="../assets/img/bouquet.jpg" alt="" class="menu">
@@ -55,7 +78,8 @@
                 </li>
             </ul>
         </section>
-
+        <div id="fb-root"></div>
+<div class="fb-comments" data-href="http://localhost:8080/" data-numposts="3" data-width=""></div>
 
       </div>
     </div>
@@ -63,41 +87,65 @@
 </template>
 
 <script>
-// @ is an alias to /src
+new Vue({
 
-export default {
-  data() {
-    return {};
+
+  data () {
+    return {
+      colors: [
+        'indigo',
+        'warning',
+        'pink darken-2',
+        'red lighten-1',
+        'deep-purple accent-4',
+      ],
+      slides: [
+        'First',
+        'Second',
+        'Third',
+        'Fourth',
+        'Fifth',
+      ],
+    }
   },
-
-  components: {},
-};
+})
 </script>
 
 <style scoped>
+h2{
+text-align: center;
+font-size: 20px;
+padding: 20px;
+}
+
 #accueil-baground {
-    background: url("../assets/img/flowerrose.jpg");
+    background: url("../assets/img/flower.jpg");
+      background-attachment: fixed;
+  background-position: center;
+  /* background-repeat: no-repeat; */
 }
 
 #content-accueil{
   background: black;
   color: white;
-  width:90%;
+  width:100%;
   margin: auto;
 
 }
-#slide {
+/* #slide {
   width: 100%;
   height: 600px;
   background: url("../assets/img/slide1.png");
   background-size: cover;
-}
+} */
 
 /* a propos */
 
 #propos {
   width: 100%;
-
+    background: url("../assets/img/flower.jpg");
+      background-attachment: fixed;
+  background-position: center;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -130,11 +178,16 @@ video {
 }
 
 /* boutique */
+#boutique{
+   background: linear-gradient(190deg, #e6d3f9 0%, #e6d3f9 50%, #f1a0d9 50%, #cea0f1 100%);
+}
 ul.menu {
 	display: flex;
 	width: 100%;
 	justify-content: center;
 	align-items: center;
+     
+
 }
 
 li.menu {
@@ -142,7 +195,7 @@ li.menu {
 	flex-direction: row;
 	flex-wrap: wrap;
 	width: 20%;
-	margin-top: 50px;
+	/* margin-top: 0px; */
 	height: auto;
 	border-radius: 50%;
 	flex-basis: auto;

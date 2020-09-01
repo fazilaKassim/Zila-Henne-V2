@@ -67,6 +67,10 @@ h1, p{
 height: auto;
 padding: 2%;
 width: 100%;
+ background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   }
 
   form {padding : 40px 0;

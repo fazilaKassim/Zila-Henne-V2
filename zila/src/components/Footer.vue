@@ -33,17 +33,21 @@ export default {};
 
 <style>
 footer {
+
   width: 100%;
   height: 20vh;
+ 
 }
 #footer {
   width: 100%;
-  height: 20vh;
+  height:300px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 50px;
   grid-row-gap: 0px;
+
+   
 }
 h2{
     color:rgb(200, 156, 98) ;
